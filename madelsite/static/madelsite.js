@@ -1,3 +1,5 @@
+var console_input = "";
+
 function run_command(command) {
     $("#term").append(`<label style="color: var(--font-color);">guest@madeline:~# ${command}</label>\n`);
 
@@ -38,5 +40,25 @@ Redirecting...
         window.location = "http://static.qtqt.cf/";
     }
 
+    else {
+        if (command.length) {
+            $("#term").append(`${command}: command not found\n`);
+        }
+    }
+
     $('#term').scrollTop($('#term')[0].scrollHeight);
 }
+
+
+$(document).keydown(function(e) {
+    if (e.key.match(/^[0-9a-zA-Z]$/)) {
+        console_input += e.key;
+    } else if (e.keyCode == 8) {
+        console_input = console_input.slice(0, console_input.length - 1);
+    } else if (e.keyCode == 13) {
+        run_command(console_input);
+        console_input = "";
+    }
+
+    $("#console-input").text(console_input);
+});
