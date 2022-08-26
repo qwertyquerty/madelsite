@@ -1,0 +1,71 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="https://unpkg.com/terminal.css@0.7.2/dist/terminal.min.css" />
+        <style>
+            :root {
+                --global-font-size: 15px;
+                --global-line-height: 1.4em;
+                --global-space: 10px;
+                --font-stack: Menlo, Monaco, Lucida Console, Liberation Mono,
+                DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace,
+                serif;
+                --mono-font-stack: Menlo, Monaco, Lucida Console, Liberation Mono,
+                DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace,
+                serif;
+                --background-color: #222225;
+                --page-width: 60em;
+                --font-color: #e8e9ed;
+                --invert-font-color: #222225;
+                --secondary-color: #a3abba;
+                --tertiary-color: #a3abba;
+                --primary-color: #62c4ff;
+                --error-color: #ff3c74;
+                --progress-bar-background: #3f3f44;
+                --progress-bar-fill: #62c4ff;
+                --code-bg-color: #3f3f44;
+                --input-style: solid;
+                --display-h1-decoration: none;
+            }
+            
+            .terminal-prompt::before {
+                display: none;
+            }
+
+            pre {
+                user-select: none;
+            }
+        </style>
+
+    </head>
+    
+    <body class="terminal">
+        <div class="container">
+<pre style="border: none;">
+Welcome to Madeline 1.0.0 (GNU/Linux 5.4.0-124-generic x86_64)
+
+ * Documentation:  <a href="/">https://madeline.sh</a>
+ * Support:        <a href="/contact">https://madeline.sh/contact</a>
+
+  System information as of {{ datetime.utcnow().strftime("%a %b %d %X UTC %Y") }}
+
+  System load:           {{ psutil.getloadavg()[0] }}
+  Usage of /:            {{ psutil.disk_usage("/").percent }}% of {{ (psutil.disk_usage("/").total / (1024**3)) | round(2) }}GB
+  Memory usage:          {{ psutil.virtual_memory().percent }}%
+  Swap usage:            {{ psutil.swap_memory().percent }}%
+  Processes:             {{ psutil.pids() | length }}
+  Users logged in:       1
+  IPv4 address for eth0: {{ socket.gethostbyname(socket.gethostname()) }}
+
+78 updates can be applied immediately.
+9 of these updates are standard security updates.
+To see these additional updates run: apt list --upgradable
+
+
+Last login: {{ datetime.utcnow().strftime("%a %b %d %X %Y") }} from {{ request.remote_addr }}
+
+<label class="terminal-prompt">guest@madeline:~# </label>
+</pre>
+
+        </div>
+    </body>
+</html>
