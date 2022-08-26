@@ -12,8 +12,8 @@ I mostly work on personal projects but have done freelance work in the past, and
 /*---------------------------*/
 
 If you have spare gold feel free to send it to
-- BTC: bc1qkqy5tqdahdn70tnm42gs6qmq0hg7x5xvr87f94
-- ETH: 0x75FE644Df34A95b3C5E03767AeAEe80d7B1B6ce7
+- BTC: <a href="https://www.blockchain.com/btc/address/bc1qkqy5tqdahdn70tnm42gs6qmq0hg7x5xvr87f94">bc1qkqy5tqdahdn70tnm42gs6qmq0hg7x5xvr87f94</a>
+- ETH: <a href="https://etherscan.io/address/0x75FE644Df34A95b3C5E03767AeAEe80d7B1B6ce7">0x75FE644Df34A95b3C5E03767AeAEe80d7B1B6ce7</a>
 
 `);
     }
