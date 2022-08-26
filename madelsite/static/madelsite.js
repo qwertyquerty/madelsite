@@ -70,7 +70,3 @@ $(document).keydown(function(e) {
 
     $("#console-input").text(console_input);
 });
-
-$(document).click(function(e) {
-    $("#invisible-input").focus();
-})
