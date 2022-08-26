@@ -33,18 +33,27 @@
 
             pre {
                 user-select: none;
+                border: none;
+                white-space: pre-wrap;
+                word-break: keep-all;
             }
+
         </style>
 
+        <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+        
+        <script src="/static/madelsite.js"></script>
     </head>
     
     <body class="terminal">
         <div class="container">
-<pre style="border: none;">
+
+<div>
+<pre id="term" style="max-height: 80vh; padding-bottom: 0px; margin-bottom: 0px; overflow: hidden;">
 Welcome to Madeline 1.0.0 (GNU/Linux 5.4.0-124-generic x86_64)
 
  * Documentation:  <a href="/">https://madeline.sh</a>
- * Support:        <a href="/contact">https://madeline.sh/contact</a>
+ * Support:        <a href="https://discord.gg/JF3kg77">https://discord.gg/JF3kg77</a>
 
   System information as of {{ datetime.utcnow().strftime("%a %b %d %X UTC %Y") }}
 
@@ -60,11 +69,16 @@ Welcome to Madeline 1.0.0 (GNU/Linux 5.4.0-124-generic x86_64)
 9 of these updates are standard security updates.
 To see these additional updates run: apt list --upgradable
 
-
 Last login: {{ datetime.utcnow().strftime("%a %b %d %X %Y") }} from {{ request.remote_addr }}
 
-<label class="terminal-prompt">guest@madeline:~# </label>
+Available commands: `<a onclick="run_command('about')">about</a>` `<a onclick="run_command('contact')">contact</a>` `<a onclick="run_command('ls')">ls</a>` 
+
 </pre>
+</div>
+
+<div>
+    <pre style="margin-top: 0px; padding-top: 0px;"><label id="prompt" class="terminal-prompt">guest@madeline:~# </label></pre>
+</div>
 
         </div>
     </body>
