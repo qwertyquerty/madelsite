@@ -40,6 +40,14 @@ Redirecting...
         window.location = "http://static.qtqt.cf/";
     }
 
+    else if (command == "exit" || command == "logout" || command == "shutdown") {
+        $(".container").remove();
+    }
+    
+    else if (command == "clear") {
+        $("#term").text("");
+    }
+
     else {
         if (command.length) {
             $("#term").append(`${command}: command not found\n`);
@@ -62,3 +70,7 @@ $(document).keydown(function(e) {
 
     $("#console-input").text(console_input);
 });
+
+$(document).click(function(e) {
+    $("#invisible-input").focus();
+})
