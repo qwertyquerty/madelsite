@@ -228,6 +228,7 @@ function lt_load(){
 		if(typeof saveGame.cash !== "undefined") cash = saveGame.cash;
 		if(typeof saveGame.workers !== "undefined") workers = saveGame.workers;
 		worker_cost = lt_worker_cost();
+        stand_cost = lt_stand_cost();
 		lt_update_labels();
 	}
 };
