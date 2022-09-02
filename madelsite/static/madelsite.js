@@ -212,7 +212,8 @@ function lt_save(){
 		lemonade: lemonade,
 		lemonade_sold: lemonade_sold,
 		cash: cash,
-		workers: workers
+		workers: workers,
+        stand_level: stand_level
 	};
 	
 	localStorage.setItem("save", JSON.stringify(saveData));
