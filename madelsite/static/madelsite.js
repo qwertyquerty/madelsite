@@ -247,9 +247,11 @@ function lt_worker_efficiency() {
 function lt_reset(){
 	lemonade = 0;
 	workers = 0;
-    worker_cost = Math.floor(10 * Math.pow(1.1, workers));
+    worker_cost = lt_worker_cost();
 	cash = 0;
 	lemonade_sold = 0;
+    stand_level = 1;
+    stand_cost = lt_stand_cost();
 	lt_save()
 	lt_update_labels();
 }
