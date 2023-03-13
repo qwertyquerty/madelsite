@@ -6,6 +6,8 @@ import psutil
 
 import socket
 
+import platform
+
 app = Flask(__name__)
 
 @app.route("/static/<path:path>")
@@ -14,7 +16,7 @@ def send_static_content(path):
 
 @app.context_processor
 def add_imports():
-    return dict(datetime=datetime, psutil=psutil, socket=socket, request=request)
+    return dict(datetime=datetime, psutil=psutil, socket=socket, request=request, platform=platform)
 
 @app.route("/")
 def route_index():

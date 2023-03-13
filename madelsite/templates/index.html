@@ -51,7 +51,7 @@
 
 <div>
 <pre id="term" style="max-height: 80vh; padding-bottom: 0px; margin-bottom: 0px; overflow: hidden;">
-Welcome to Madeline 1.0.0 (GNU/Linux 5.4.0-124-generic x86_64)
+Welcome to Madeline 1.0.0 ({{ platform.system() }} {{ platform.release() }} {{ platform.machine() }})
 
  * Documentation:  <a href="/">https://madeline.sh</a>
  * Support:        <a href="https://discord.gg/JF3kg77">https://discord.gg/JF3kg77</a>
@@ -73,10 +73,7 @@ To see these additional updates run: apt list --upgradable
 Last login: {{ datetime.utcnow().strftime("%a %b %d %X %Y") }} from {{ request.remote_addr }}
 
 </pre>
-
-
 </div>
-
 
 
 <div>
