@@ -5,7 +5,7 @@ function run_command(command) {
 
     if (command == "help") {
         $("#term").append(`
-Available commands: \`<a onclick="run_command('help')">help</a>\` \`<a onclick="run_command('about')">about</a>\` \`<a onclick="run_command('contact')">contact</a>\` \`<a onclick="run_command('ls')">ls</a>\` \`<a onclick="run_command('lmndt')">lmndt</a>\` \`<a onclick="run_command('mplyr')">mplyr</a>\` \`<a onclick="run_command('clear')">clear</a>\` \`<a onclick="run_command('logout')">logout</a>\`
+Available commands: \`<a onclick="run_command('help')">help</a>\` \`<a onclick="run_command('about')">about</a>\` \`<a onclick="run_command('contact')">contact</a>\` \`<a onclick="run_command('ls')">ls</a>\` \`<a onclick="run_command('links')">links</a>\` \`<a onclick="run_command('lmndt')">lmndt</a>\` \`<a onclick="run_command('mplyr')">mplyr</a>\` \`<a onclick="run_command('clear')">clear</a>\` \`<a onclick="run_command('logout')">logout</a>\`
 
 `);
     }
@@ -15,11 +15,11 @@ Hello and welcome to my personal developer site. I figured I would eventually ha
 
 I am mainly a Python developer, but I study and have hobbies in the majority of computer science areas
 
-I mostly work on personal projects but have done freelance work in the past, and am usually up for hire. If you want to talk to me you can usually contact me on Discord at coconatsu#4342, or shoot an email to <a href="mailto: qwertytrogi@gmail.com">qwertytrogi@gmail.com</a>
+I mostly work on personal projects but have done freelance work in the past, and am usually up for hire. If you want to talk to me you can usually contact me on Discord at @qwertyquerty, or shoot an email to <a href="mailto: qwertytrogi@gmail.com">qwertytrogi@gmail.com</a>
 
 /*---------------------------*/
 
-If you have spare gold feel free to send it to
+If you have spare money feel free to send it to
 - BTC: <a href="https://www.blockchain.com/btc/address/bc1qkqy5tqdahdn70tnm42gs6qmq0hg7x5xvr87f94">bc1qkqy5tqdahdn70tnm42gs6qmq0hg7x5xvr87f94</a>
 - ETH: <a href="https://etherscan.io/address/0x75FE644Df34A95b3C5E03767AeAEe80d7B1B6ce7">0x75FE644Df34A95b3C5E03767AeAEe80d7B1B6ce7</a>
 
@@ -33,7 +33,6 @@ Feel free to contact me for any reason:
  * Email: <a href="mailto: qwertytrogi@gmail.com">qwertytrogi@gmail.com</a>
  * Discord: <a href="https://discord.gg/JF3kg77">https://discord.gg/JF3kg77</a>
  * Github: <a href="https://github.com/qwertyquerty">https://github.com/qwertyquerty</a>
- * Reddit: <a href="https://www.reddit.com/u/qwerty_trogi">https://www.reddit.com/u/qwerty_trogi</a>
 
 `);      
     }
@@ -43,8 +42,21 @@ Feel free to contact me for any reason:
 Redirecting...
 
 `);
-        window.location = "http://static.qtqt.cf/";
+        window.location = "http://static.madeline.sh/";
     }
+
+	else if (command == "links") {
+		$("#term").append(`
+Available links:
+
+ * <a href="https://static.madeline.sh/">Static Files</a>: My public file archive
+ * <a href="https://ss13.madeline.sh/">SS13 Stats</a>: Player count tracker for Space Station 13
+ * <a href="https://ss14.madeline.sh/">SS14 Stats</a>: Player count tracker for Space Station 14
+ * <a href="http://speed.sfo-1.madeline.sh/">Speed Test</a>: Internet speed test check to my SFO-1 server
+ * <a href="https://gorgevoid.madeline.sh/">Gorge Checker</a>: Pactice website for TP speedrun trick "Gorge Void"
+
+`)
+	}
 
     else if (command == "exit" || command == "logout" || command == "shutdown") {
         $(".container").remove();
@@ -95,7 +107,8 @@ Actions:
 }
 
 $(document).ready(function() {
-    setTimeout(() => run_command("help"), 250);
+    setTimeout(() => run_command("help"), 300);
+    setTimeout(() => run_command("links"), 600);
 
 	lt_load();
 
