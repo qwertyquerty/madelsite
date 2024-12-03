@@ -39,6 +39,14 @@
                 word-break: keep-all;
             }
 
+            #term {
+                -ms-overflow-style: none;  /* Internet Explorer 10+ */
+                scrollbar-width: none;  /* Firefox */
+            }
+            #term::-webkit-scrollbar { 
+                display: none;  /* Safari and Chrome */
+            }
+
         </style>
 
         <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
@@ -50,7 +58,7 @@
         <div class="container">
 
 <div>
-<pre id="term" style="max-height: 80vh; padding-bottom: 0px; margin-bottom: 0px; overflow: hidden;">
+<pre id="term" style="max-height: 85vh; padding-bottom: 0px; margin-bottom: 0px; overflow: auto;">
 Welcome to Madeline 1.0.0 (GNU/Linux 5.4.0-124-generic x86_64)
 
  * Documentation:  <a href="/">https://madeline.sh</a>

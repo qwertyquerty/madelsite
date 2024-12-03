@@ -5,23 +5,20 @@ function run_command(command) {
 
     if (command == "help") {
         $("#term").append(`
-Available commands: \`<a onclick="run_command('help')">help</a>\` \`<a onclick="run_command('about')">about</a>\` \`<a onclick="run_command('contact')">contact</a>\` \`<a onclick="run_command('ls')">ls</a>\` \`<a onclick="run_command('links')">links</a>\` \`<a onclick="run_command('lmndt')">lmndt</a>\` \`<a onclick="run_command('mplyr')">mplyr</a>\` \`<a onclick="run_command('clear')">clear</a>\` \`<a onclick="run_command('logout')">logout</a>\`
+Available commands: \`<a onclick="run_command('help')">help</a>\` \`<a onclick="run_command('about')">about</a>\` \`<a onclick="run_command('contact')">contact</a>\` \`<a onclick="run_command('donate')">donate</a>\` \`<a onclick="run_command('links')">links</a>\` \`<a onclick="run_command('lmndt')">lmndt</a>\` \`<a onclick="run_command('mplyr')">mplyr</a>\` \`<a onclick="run_command('clear')">clear</a>\` \`<a onclick="run_command('logout')">logout</a>\`
 
 `);
     }
+
     else if (command == "about") {
         $("#term").append(`
-Hello and welcome to my personal developer site. I figured I would eventually have to at least put something here. I hope you like this site because it took a lot of work. Why not shoot me an email explaining how in the world you ended up here, because... well... how did you end up here??
+Hi, my name is Madeline! Welcome to my personal developer site. I figured I would eventually have to upload at least something here; hope you like it. Why not shoot me an email explaining how you ended up here, because... well... how did you end up here??
 
-I am mainly a Python developer, but I study and have hobbies in the majority of computer science areas
+I am mainly a Python developer, but I study and have hobbies in the majority of computer science and engineering areas. Other hobbies of mine include playing the piano, music production, Zelda speedrunning, gardening, city walking, and amateur rocketry.
 
 I mostly work on personal projects but have done freelance work in the past, and am usually up for hire. If you want to talk to me you can usually contact me on Discord at @qwertyquerty, or shoot an email to <a href="mailto: qwertytrogi@gmail.com">qwertytrogi@gmail.com</a>
 
-/*---------------------------*/
-
-If you have spare money feel free to send it to
-- BTC: <a href="https://www.blockchain.com/btc/address/bc1qkqy5tqdahdn70tnm42gs6qmq0hg7x5xvr87f94">bc1qkqy5tqdahdn70tnm42gs6qmq0hg7x5xvr87f94</a>
-- ETH: <a href="https://etherscan.io/address/0x75FE644Df34A95b3C5E03767AeAEe80d7B1B6ce7">0x75FE644Df34A95b3C5E03767AeAEe80d7B1B6ce7</a>
+If you have spare money I could really use it so feel free to \`<a onclick="run_command('donate')">donate</a>\`!
 
 `);
     }
@@ -37,6 +34,17 @@ Feel free to contact me for any reason:
 `);      
     }
 
+    else if (command == "donate") {
+        $("#term").append(`
+Got extra money? Send it over:
+
+ - PayPal: <a href="https://www.paypal.com/paypalme/qwertyquerty">@qwertyquerty</a>
+ - BTC: <a href="https://www.blockchain.com/btc/address/bc1qkqy5tqdahdn70tnm42gs6qmq0hg7x5xvr87f94">bc1qkqy5tqdahdn70tnm42gs6qmq0hg7x5xvr87f94</a>
+ - ETH: <a href="https://etherscan.io/address/0x75FE644Df34A95b3C5E03767AeAEe80d7B1B6ce7">0x75FE644Df34A95b3C5E03767AeAEe80d7B1B6ce7</a>
+	
+`);      
+    }
+
     else if (command == "ls") {
         $("#term").append(`
 Redirecting...
@@ -49,6 +57,7 @@ Redirecting...
 		$("#term").append(`
 Available links:
 
+ * <a href="https://www.youtube.com/@qwertyquerty">YouTube</a>: My YouTube channel
  * <a href="https://static.madeline.sh/">Static Files</a>: My public file archive
  * <a href="https://ss13.madeline.sh/">SS13 Stats</a>: Player count tracker for Space Station 13
  * <a href="https://ss14.madeline.sh/">SS14 Stats</a>: Player count tracker for Space Station 14
@@ -68,17 +77,17 @@ Available links:
 
     else if (command == "mplyr") {
         $("#term").append(`
-<div class="terminal-alert"><b>[MPLYR] "~/kcptn.mod"</b>
+<div class="terminal-alert"><b>[/BIN/MPLYR] - "~/sssl.mod"</b>
 <div class="progress-bar" style="white-space: initial !important;"><div class="progress-bar-filled mp_progress" style="width:0%; position:relative;"></div></div>
 Controls: <a onclick="mp_play()">[play]</a> <a onclick="mp_pause()">[pause]</a> <a onclick="mp_stop()">[stop]</a>
-File: ~/kcptn.mod | Position: <label class="mp_position">0x0</label>
+File: ~/sssl.mod | Position: <label class="mp_position">0x0</label>
 </div>
 `)
     }
 
     else if (command == "lmndt") {
         $("#term").append(`
-<div class="terminal-alert"><b>[/USR/GAMES/LMNDT.BAS] - "Lemonade Tycoon"</b>
+<div class="terminal-alert"><b>[/GAMES/LMNDT.BAS] - "Lemonade Tycoon"</b>
 
 Lemonade: <span class="lt_lemonade"></span>
 Total Sales: <span class="lt_sold_lemonade"></span>
@@ -96,6 +105,18 @@ Actions:
 </div>
 `);
     }
+
+	else if (command == "apt list --upgradeable"
+			|| command.startsWith("rm ")
+			|| command == "rm"
+			|| command.startsWith("sudo ")
+			|| command == "sudo") 
+	{
+        $("#term").append(`
+Nice try
+
+`);
+	}
 
     else {
         if (command.length) {
@@ -132,7 +153,7 @@ $(document).ready(function() {
 
 
 $(document).keydown(function(e) {
-    if (e.key.match(/^[0-9a-zA-Z]$/)) {
+    if (e.key.match(/^.$/)) {
         console_input += e.key;
     } else if (e.keyCode == 8) {
         console_input = console_input.slice(0, console_input.length - 1);
@@ -145,9 +166,7 @@ $(document).keydown(function(e) {
 });
 
 
-
-var mp_audio = new Audio("https://qtqt.cf/static/kapchiptune.ogg");
-
+var mp_audio = new Audio("https://static.madeline.sh/music/SSSL/short_sweet_synthetic_life.wav");
 
 function mp_play() {
 	if (mp_audio.paused) {
