@@ -62,7 +62,7 @@ Available links:
  * <a href="https://ss13.madeline.sh/">SS13 Stats</a>: Player count tracker for Space Station 13
  * <a href="https://ss14.madeline.sh/">SS14 Stats</a>: Player count tracker for Space Station 14
  * <a href="http://speed.sfo-1.madeline.sh/">Speed Test</a>: Internet speed test check to my SFO-1 server
- * <a href="https://gorgevoid.madeline.sh/">Gorge Checker</a>: Pactice website for TP speedrun trick "Gorge Void"
+ * <a href="https://gorgevoid.madeline.sh/">Gorge Checker</a>: Practice website for TP speedrun trick "Gorge Void"
 
 `)
 	}
